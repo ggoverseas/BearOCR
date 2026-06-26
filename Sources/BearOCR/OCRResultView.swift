@@ -104,16 +104,15 @@ struct OCRResultView: View {
 
             Button(action: copyToClipboard) {
                 Label("复制", systemImage: "doc.on.doc")
-                    .labelStyle(.iconOnly)
+                    .font(.system(size: 14, weight: .medium))
             }
             .buttonStyle(.borderless)
-            .help("复制到剪贴板 (⌘C)")
-            .keyboardShortcut("c", modifiers: .command)
+            .help("复制全部结果到剪贴板")
 
             if hasTable {
                 Button(action: exportXLSX) {
                     Label("导出 XLSX", systemImage: "square.and.arrow.down")
-                        .labelStyle(.iconOnly)
+                        .font(.system(size: 14, weight: .medium))
                 }
                 .buttonStyle(.borderless)
                 .help("导出为 Excel (.xlsx)")
@@ -129,7 +128,7 @@ struct OCRResultView: View {
         if hasTable && selectedTab == 1 {
             VStack(alignment: .leading, spacing: 4) {
                 Text(appState.ocrResultText)
-                    .font(.body)
+                    .font(.system(size: 15))
                     .foregroundStyle(.secondary)
                 Divider()
                 Text("HTML 源码:")
@@ -140,7 +139,7 @@ struct OCRResultView: View {
             }
         } else {
             Text(appState.ocrResultText)
-                .font(.body)
+                .font(.system(size: 15))
         }
     }
 

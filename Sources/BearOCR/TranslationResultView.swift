@@ -68,16 +68,16 @@ struct TranslationResultView: View {
                     .font(.headline)
                 Spacer()
                 Button(action: { copySourceText() }) {
-                    Image(systemName: "doc.on.doc")
-                        .font(.system(size: 12))
+                    Label("复制", systemImage: "doc.on.doc")
+                        .font(.system(size: 14, weight: .medium))
                 }
                 .buttonStyle(.borderless)
-                .help("复制原文")
+                .help("复制原文全部内容")
             }
 
             ScrollView {
                 Text(appState.ocrResultText)
-                    .font(.body)
+                    .font(.system(size: 15))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .textSelection(.enabled)
             }
@@ -93,16 +93,16 @@ struct TranslationResultView: View {
                     .font(.headline)
                 Spacer()
                 Button(action: { copyTranslatedText() }) {
-                    Image(systemName: "doc.on.doc")
-                        .font(.system(size: 12))
+                    Label("复制", systemImage: "doc.on.doc")
+                        .font(.system(size: 14, weight: .medium))
                 }
                 .buttonStyle(.borderless)
-                .help("复制译文")
+                .help("复制译文全部内容")
             }
 
             ScrollView {
                 Text(appState.translatedText)
-                    .font(.body)
+                    .font(.system(size: 15))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .textSelection(.enabled)
             }
